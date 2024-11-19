@@ -1,0 +1,4 @@
+src/**/*.md
+.vscode/
+node_modules/
+dist/

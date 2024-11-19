@@ -12,7 +12,6 @@ Note that **all** configuration values are **optional** and will default to the 
 
 ```javascript
 Reveal.initialize({
-
   // Display presentation control arrows
   controls: true,
 
@@ -63,6 +62,9 @@ Reveal.initialize({
   // Flags if we should monitor the hash and change slides accordingly
   respondToHashChanges: true,
 
+  // Enable support for jump-to-slide navigation shortcuts
+  jumpToSlide: true,
+
   // Push each slide change to the browser history.  Implies `hash: true`
   history: false,
 
@@ -71,8 +73,8 @@ Reveal.initialize({
 
   // Optional function that blocks keyboard events when retuning false
   //
-  // If you set this to 'foucsed', we will only capture keyboard events
-  // for embdedded decks when they are in focus
+  // If you set this to 'focused', we will only capture keyboard events
+  // for embedded decks when they are in focus
   keyboardCondition: null,
 
   // Disables the default reveal.js slide layout (scaling and centering)
@@ -185,7 +187,7 @@ Reveal.initialize({
     'border-color',
     'border-radius',
     'outline',
-    'outline-offset'
+    'outline-offset',
   ],
 
   // Controls automatic progression to the next slide
@@ -261,8 +263,7 @@ Reveal.initialize({
   hideInactiveCursor: true,
 
   // Time before the cursor is hidden (in ms)
-  hideCursorTime: 5000
-
+  hideCursorTime: 5000,
 });
 ```
 

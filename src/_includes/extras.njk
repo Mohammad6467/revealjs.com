@@ -1,24 +1,27 @@
 <div class="hidden extras inset-0 lg:-mb-0 sticky top-16 h-full w-1/5 lg:block">
 	<div class="text-sm px-6 pl-10 pt-8">
+		{% if hide_ads != true %}
 		{% if helpers.environment == "production" %}
 		<div class="mb-4 pb-4 border-b border-gray-300">
-			<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYI553M&placement=revealjscom" id="_carbonads_js"></script>
+			<script async type="text/javascript" data-src="//cdn.carbonads.com/carbon.js?serve=CKYI553M&placement=revealjscom" id="_carbonads_js"></script>
 		</div>
+		{% endif %}
 		{% endif %}
 		<div class="mb-4 pb-4 border-b border-gray-300">
 			<a href="https://slides.com">
 				<img src="/images/slides-symbol-512x512.png" width="100" height="100">
-				<p class="block mb-2 text-gray-700">Slides.com — the official reveal.js presentation editor.</p>
+				<p class="block mb-2 text-gray-700">Slides.com — the reveal.js presentation editor.</p>
 				<span class="text-pink-700 hover:text-pink-900">Try it for free <span class="exernal-link-icon">{% include "images/icons/arrow-right.svg" %}</span></span>
 			</a>
 		</div>
-		<div class="text-gray-500">
-			<div class="mt-2">
-				v4.1.0
-			</div>
-			<a class="block hover:text-pink-900" href="https://github.com/hakimel/reveal.js/blob/3.9.2/README.md">
-				v3.9.2 docs <span class="exernal-link-icon">{% include "images/icons/arrow-right.svg" %}</span>
+		{% if id != "course" %}
+		<div class="mb-4 pb-4">
+			<a href="/course">
+				<img src="/images/docs/mastering.svg" width="140" height="140">
+				<p class="block my-2 text-gray-700">Become a reveal.js pro in the official video course.</p>
+				<span class="text-pink-700 hover:text-pink-900">Learn more <span class="exernal-link-icon">{% include "images/icons/arrow-right.svg" %}</span></span>
 			</a>
 		</div>
+		{% endif %}
 	</div>
 </div>

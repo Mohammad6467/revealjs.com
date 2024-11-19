@@ -12,9 +12,10 @@ Presentations can be configured to step through slides automatically, without an
 // Slide every five seconds
 Reveal.initialize({
   autoSlide: 5000,
-  loop: true
+  loop: true,
 });
 ```
+
 <div class="reveal reveal-example" data-config='{"autoSlide": 5000, "loop": true}'>
   <div class="slides">
     <section>Slide 1</section>
@@ -34,8 +35,12 @@ It's also possible to override the slide duration for individual slides and frag
 ```html
 <section data-autoslide="2000">
   <p>After 2 seconds the first fragment will be shown.</p>
-  <p class="fragment" data-autoslide="10000">After 10 seconds the next fragment will be shown.</p>
-  <p class="fragment">Now, the fragment is displayed for 2 seconds before the next slide is shown.</p>
+  <p class="fragment" data-autoslide="10000">
+    After 10 seconds the next fragment will be shown.
+  </p>
+  <p class="fragment">
+    Now, the fragment is displayed for 2 seconds before the next slide is shown.
+  </p>
 </section>
 ```
 
@@ -43,18 +48,23 @@ It's also possible to override the slide duration for individual slides and frag
 
 The `autoSlideMethod` config option can be used to override the default function used for navigation when auto-sliding.
 
-We step through all slides, both horizontal and [vertical](/vertical-slides/), by default. To only navigate along the top layer and ignore vertical slides, you can set this to `Reveal.navigateRight`.
+We step through all slides, both horizontal and [vertical](/vertical-slides/), by default. To only navigate along the top layer and ignore vertical slides, you can provide a method that calls `Reveal.right()`.
 
 ```js
 Reveal.configure({
-	autoSlideMethod: Reveal.navigateRight
+  autoSlideMethod: () => Reveal.right(),
 });
-````
+```
 
 ## Events
+
 We fire events whenever auto-sliding is paused or resumed.
 
 ```javascript
-Reveal.on( 'autoslideresumed', event => { /* ... */ } );
-Reveal.on( 'autoslidepaused', event => { /* ... */ } );
+Reveal.on('autoslideresumed', (event) => {
+  /* ... */
+});
+Reveal.on('autoslidepaused', (event) => {
+  /* ... */
+});
 ```

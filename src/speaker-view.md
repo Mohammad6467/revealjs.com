@@ -41,6 +41,19 @@ This will only display in the notes window.
 </section>
 ```
 
+## Adding the Speaker Notes Plugin
+
+The plugin is already bundled with reveal.js. To enable the speaker notes plugin, add the plugin source to the `index.html` and add the plugin to the initialization of reveal.js.
+
+```html
+<script src="plugin/notes/notes.js"></script>
+<script>
+  Reveal.initialize({
+    plugins: [RevealNotes],
+  });
+</script>
+```
+
 ## Share and Print Speaker Notes
 
 Notes are only visible to the speaker inside of the speaker view. If you wish to share your notes with others you can initialize reveal.js with the `showNotes` configuration value set to `true`. Notes will appear along the bottom of the presentations.
@@ -51,12 +64,11 @@ When `showNotes` is enabled notes are also included when you [export to PDF](/pd
 
 The speaker notes window will also show:
 
-- Time elapsed since the beginning of the presentation.  If you hover the mouse above this section, a timer reset button will appear.
+- Time elapsed since the beginning of the presentation. If you hover the mouse above this section, a timer reset button will appear.
 - Current wall-clock time
 - (Optionally) a pacing timer which indicates whether the current pace of the presentation is on track for the right timing (shown in green), and if not, whether the presenter should speed up (shown in red) or has the luxury of slowing down (blue).
 
-The pacing timer can be enabled by configuring the `defaultTiming` parameter in the `Reveal` configuration block, which specifies the number of seconds per slide.  120 can be a reasonable rule of thumb.  Alternatively, you can enable the timer by setting `totalTime`, which sets the total length of your presentation (also in seconds).  If both values are specified, `totalTime` wins and `defaultTiming` is ignored.  Regardless of the baseline timing method, timings can also be given per slide `<section>` by setting the `data-timing` attribute (again, in seconds).
-
+The pacing timer can be enabled by configuring the `defaultTiming` parameter in the `Reveal` configuration block, which specifies the number of seconds per slide. 120 can be a reasonable rule of thumb. Alternatively, you can enable the timer by setting `totalTime`, which sets the total length of your presentation (also in seconds). If both values are specified, `totalTime` wins and `defaultTiming` is ignored. Regardless of the baseline timing method, timings can also be given per slide `<section>` by setting the `data-timing` attribute (again, in seconds).
 
 ## Server Side Speaker Notes
 
